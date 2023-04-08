@@ -53,14 +53,10 @@ while ~isempty(intersect(f, -inf))
 
         % this while check if color at node v_id is colored or not
         % (isinf(f(v_id)) and then check if that color is in the neighbor
-        % nodes of v_id or not (~isempty(intersect(f(ns), f(v_id)))))
+        % nodes of eidx or not (~isempty(intersect(f(ns), f(eidx)))))
         while (isinf(f(v_id)) || ~isempty(intersect(f(ns), f(v_id))))
            
-            % start from color 1, if color is in used for neighbor of node 
-            % v_id then add 1 more to color and assign to that node, repeat
-            % the process, check the color is used or not, untill satisfy
-            % all the conditions
-            % 
+            
             if ~isempty(intersect(f(ns), color))
                 color = color +1;
                 f(v_id) = color;
